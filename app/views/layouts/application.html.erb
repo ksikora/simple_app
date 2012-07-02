@@ -1,8 +1,11 @@
 <!DOCTYPE html> <!-- widoki odpowiednich stronek są wstawiane funkcja yield do body -->
 <html>
 <head>
-  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title> <!-- insert the title, = przy otwierajacym oznacza execute i insert -->
-  <%= stylesheet_link_tag    "application", :media => "all" %>   <!-- wstawia styleshity i javascripty ktore jeszce nam obrabiaja 																	stronke -->
+<!-- stara wersja  <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title> --> <!-- insert the title, = przy otwierajacym oznacza execute i insert -->
+
+	<title><%= full_title(yield(:title)) %></title>
+
+  <%= stylesheet_link_tag    "application", :media => "all" %><!-- wstawiaplik application.css i javascripty ktore jeszce nam obrabiaja 																	stronke -->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %> <!-- zapobiega atakowi CSRF -->
 </head>
