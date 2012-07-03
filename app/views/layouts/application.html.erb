@@ -10,8 +10,11 @@
   <%= csrf_meta_tags %> <!-- zapobiega atakowi CSRF -->
 </head>
 <body>
+	<%= render 'layouts/header' %> <!-- funkcja render wstawia tu partiala z pliku _header.html.erb -->
+		<div class="container">
+			<%= yield %>  <!-- ta funkcja wstawia tutaj html widoku strony do ktorej sie odwolujemy bezposrednio -->
 
-<%= yield %>  <!-- ta funkcja wstawia tutaj html widoku strony do ktorej sie odwolujemy bezposrednio -->
-
-</body>
+			<%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>

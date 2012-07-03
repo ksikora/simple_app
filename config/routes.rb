@@ -1,11 +1,21 @@
 SimpleApp::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/help"
+  #get "static_pages/home"
+	root :to => 'static_pages#home' # to nam zrobi ze sciezka domyslna '/' bedzie sie odwolywac do pliku home	
 
-  get "static_pages/about"
 
-  get "static_pages/contact"
+  #get "static_pages/help"
+	match '/help', :to => 'static_pages#help' # get to to samo co match podobno. , to dziala bardziej implicite. teraz bedziemy odwolywali sie do /help a nie do static_pages/help, dodatkowo to nam tworzy zmienna help_path: '/help' i help_url: 'hhtp:...' ktora mozemy wszedzie uzyc
+
+
+  #get "static_pages/about"
+	match 'about', :to => 'static_pages#about'
+	
+  #get "static_pages/contact"
+	match 'contact', :to => 'static_pages#contact'
+
+	match 'signup', to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

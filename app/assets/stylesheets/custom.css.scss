@@ -1,0 +1,168 @@
+/* ten plik railsy automatycznie wpluwają w aplications.css */
+/* cssy moga sie odwolywac zarowno do klas, do id, do HTML taga lub do kombinacji */
+@import "bootstrap";
+
+html {
+	overflow-y: scroll;
+}
+
+body {								/* oddala cialo od gornego paska  */
+	padding-top: 60px;
+}
+
+section { overflow: auto; } /* co to robi? */
+
+textarea { resize: vertical; } /* co to robi? */
+
+.center { text-align: center; } /* centruje tekst. .center to jakas klasa odpowiadajaca częsci strony? (analogicznie do navbar by bylo) */
+
+.center h1 { margin-bottom: 10px; } /* dodaje pod h1 10 pixeli */
+
+/* mozna to zrobic zagniezadzajac(skladnia sass) SASS jest nadbudówką CSS!  */
+/*
+.center { 
+	text-align: center; 
+	h1 { 
+		margin-bottom: 10px; 
+	}
+}
+*/
+
+
+
+
+
+/* typografia */
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -2 px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.7em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: #999;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+
+/* header zmienia "sample app" na fajny*/
+
+
+/*
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+#logo:hover{
+	color:#fff;
+	text-decoration: none;
+}
+*/ /* logo to to fajnie simple app? */
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: bold;
+	line-height: 1;
+	&:hover{
+		color: white; /* white to wbudowany kolor, to to samo co #fff */
+		text-decoration: none;
+	}
+}/* korzystamy z sass ktory pozwala na zagniezdzenia. & to referencja do parenta czyli logo. hover oznacza akcje najechania myszka*/
+
+
+
+/* footer */
+/*
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+*/
+
+/* footer w skladni sass, dodajemy dodatkowo zmienne ktore tez mogą byc tylko w sass(lightgrey). zmienne takie juz istnieją np $grayLight to to samo i nie trzeba tego deklarować. oprocz tego są jeszce wbudowane kolory np "white"*/
+
+$lightGray: #999;
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $lightGray;
+  a {
+    color: #555;
+    &:hover { 
+      color: #222;
+    }
+  }  
+  small { 
+    float: left; 
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

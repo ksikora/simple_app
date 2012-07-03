@@ -1,6 +1,12 @@
 <% provide(:title, 'Home') %> <!-- przypisuje zmiennej title "Home"  znaczniki bez rowna sie tylko execute code -->
+<div class="center hero-unit">
 		<h1>Sample App</h1>
-		<p>bla bla</p>
+		<h2>this is the homepage</h2>
+
+		<%= link_to "Sign up now!", signup_path, :class => "btn btn-large btn-primary" %> <!-- klasy btn to buttony -->
+</div>
+
+<%= link_to image_tag("rails.png", :alt => "Rails"), 'http://rubyonrails.org/' %> <!-- obrazek bieze z /assets/, alt to to co wyswietlimy jesli nie ma obrazka, w railsach mozna go pominac bo domyslnie jest nazwa obrazka, w htmlu nie mozna -->
 
 
 
