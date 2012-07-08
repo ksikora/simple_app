@@ -1,0 +1,19 @@
+odpalanie konsli w trybie zabawy:
+rails console --sandbox
+User.create = User.new + User.save
+odwrotnosc do create to u.destroy
+
+Uzywanie Active record do wydobywanai operacji z bazy danych:
+User.find(1)
+User.find_by_email("kukumail")
+
+#modyfikowanie istniejacych
+user = User.first
+user.email = dupa;
+user.save # jak nie damy save to mozemy odczytac pierwotna wersje z bazy user.reload
+
+User.all
+
+user.update_attributes(name: "asdfs", ...) # to robi automatyczny save. mozna zmodyfikowac tylko atrybuty accessible
+
+

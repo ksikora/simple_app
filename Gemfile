@@ -3,12 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'therubyracer'
 gem 'bootstrap-sass', '2.0.0' # sass to jezyk podobny do LESS CSS, ktorego normalnie uzywa bootstrap
+gem 'bcrypt-ruby', '3.0.1'# dzieki temu bedziemy szyfrowali hasla w bazie danych
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.10.0'
   gem 'guard-rspec', '0.5.5'
 end
+
+gem 'annotate', '~> 2.4.1.beta', group: :development # generuje pożyteczne informacje przy tworzeniu modeli
 
 # Gems used only for assets and not required
 # in production environments by default.
