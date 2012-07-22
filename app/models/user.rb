@@ -2,14 +2,15 @@
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id              :integer         not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime        not null
+#  updated_at      :datetime        not null
+#  password_digest :string(255)
 #
 
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base   # zawarte walidację będą sprawdzane dopiero przy rządzaniu zapisania do bazy danych ( na 90% )
   attr_accessible :email, :name, :password, :password_confirmation # accesible to dostepne dla uzytkownikow obcych, takie "public"
 	has_secure_password # ta metoda powoduje sprawdzanie poprawnosci rejestrowanego hasla i zapewnianie bezpiecznego hasla, zapewnia tez szyfrowanie password_digest, zajmuje sie tez autentyfikacja (az tak? )
 

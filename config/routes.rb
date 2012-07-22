@@ -1,9 +1,11 @@
 SimpleApp::Application.routes.draw do
-  get "users/new"
+
+	resources :users #mowi ze pod adresem /users są jakies zasoby RESTowe(do ktorych sie mozna odwolac po /id np users/1 oraz wiele innych(po prostu calego resta. np users/1/edit albo /users/new
 
   #get "static_pages/home"
 	root :to => 'static_pages#home' # to nam zrobi ze sciezka domyslna '/' bedzie sie odwolywac do pliku home	
 
+	
 
   #get "static_pages/help"
 	match '/help', :to => 'static_pages#help' # get to to samo co match podobno. , to dziala bardziej implicite. teraz bedziemy odwolywali sie do /help a nie do static_pages/help, dodatkowo to nam tworzy zmienna help_path: '/help' i help_url: 'hhtp:...' ktora mozemy wszedzie uzyc

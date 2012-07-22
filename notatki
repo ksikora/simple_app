@@ -3,7 +3,7 @@ rails console --sandbox
 User.create = User.new + User.save
 odwrotnosc do create to u.destroy
 
-Uzywanie Active record do wydobywanai operacji z bazy danych:
+Uzywanie Active record do wydobywania operacji z bazy danych:
 User.find(1)
 User.find_by_email("kukumail")
 
@@ -16,4 +16,4 @@ User.all
 
 user.update_attributes(name: "asdfs", ...) # to robi automatyczny save. mozna zmodyfikowac tylko atrybuty accessible
 
-
+User.count -> zliczy rekordy w bazie
