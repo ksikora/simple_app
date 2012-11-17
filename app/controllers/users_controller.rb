@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user]) # przekazujemy parametry zebrane z formularza. tamten obiekt tymczasowy od teraz jest nieprzydatny.
 		if @user.save				# params od obiektu zawiera hasha hashy gdzie obiekt jest mapowany na parametry a kazdy z parametrow to tez hash np Password: dupa itd.
 
-
+			sign_in @user
 			flash[:success] = "Registered succesfully" # dodajemy pare key value do hasha, tego hasha potem wyswietlimy uzytkownikowi
 			redirect_to @user # przekierowuje do users/id usera @user. 
 

@@ -15,6 +15,8 @@ class User < ActiveRecord::Base   # zawarte walidację będą sprawdzane dopiero
 	has_secure_password # ta metoda powoduje sprawdzanie poprawnosci rejestrowanego hasla i zapewnianie bezpiecznego hasla, zapewnia tez szyfrowanie password_digest, zajmuje sie tez autentyfikacja, dostarcza nam metody autentyfikacyjnej
 
 	before_save { |user| user.email = email.downcase } # uzywamy tu collbacka ktory nam zrobi downcasting dla wporwadzanych maili
+	before_save :create_remember_token
+
 
 	validates :name, presence: true, length: {maximum: 50 } # presence jest false gdy jest null w bazie danych, np pustry string.
 
@@ -25,6 +27,12 @@ class User < ActiveRecord::Base   # zawarte walidację będą sprawdzane dopiero
 	validates :password, presence: true, length: { minimum: 6 }
 
 	validates :password_confirmation, presence: true
+
+  private # nie bedzie sie dalo explicite odwolac do tego pola np. w konsoli
+
+    def create_remember_token		# funkcja ktora przypisuje w bazie polu remember_toker randomowego stringa
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 	
 
 end
