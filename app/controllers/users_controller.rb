@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def new
+	def new
 		@user = User.new # dla strony ktora tworzy uzytkownika wywola sie ta metoda tworzaca zmienną z nowym użytkownikiem
-  end
+	end
 
 	def show
 		@user = User.find(params[:id]) # id to jest parametr liczba wysylany razem z GET http wchodzacy w czesc URL (users/id)
@@ -21,5 +21,8 @@ class UsersController < ApplicationController
 		else
 			render 'new' #wyrenderuj widok users/new
 		end
+	end
+	def edit
+		@user=User.find(params[:id])
 	end
 end
