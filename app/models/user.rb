@@ -12,7 +12,7 @@
 
 class User < ActiveRecord::Base   # zawarte walidację będą sprawdzane dopiero przy rządzaniu zapisania do bazy danych ( na 90% )
   attr_accessible :email, :name, :password, :password_confirmation # accesible to dostepne dla uzytkownikow obcych, takie "public"
-	has_secure_password # ta metoda powoduje sprawdzanie poprawnosci rejestrowanego hasla i zapewnianie bezpiecznego hasla, zapewnia tez szyfrowanie password_digest, zajmuje sie tez autentyfikacja (az tak? )
+	has_secure_password # ta metoda powoduje sprawdzanie poprawnosci rejestrowanego hasla i zapewnianie bezpiecznego hasla, zapewnia tez szyfrowanie password_digest, zajmuje sie tez autentyfikacja, dostarcza nam metody autentyfikacyjnej
 
 	before_save { |user| user.email = email.downcase } # uzywamy tu collbacka ktory nam zrobi downcasting dla wporwadzanych maili
 

@@ -22,5 +22,4 @@ class UsersController < ApplicationController
 			render 'new' #wyrenderuj widok users/new
 		end
 	end
-
 end
