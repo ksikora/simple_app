@@ -17,3 +17,10 @@ User.all
 user.update_attributes(name: "asdfs", ...) # to robi automatyczny save. mozna zmodyfikowac tylko atrybuty accessible
 
 User.count -> zliczy rekordy w bazie
+
+############# obsluga gita ######################
+
+git add -u
+git remote -v
+git remote rm origin
+git remote add origin git@ github.com:ksikora/simple_app.git
